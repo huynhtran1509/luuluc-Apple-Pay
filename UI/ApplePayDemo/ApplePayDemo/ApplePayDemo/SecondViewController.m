@@ -1,0 +1,329 @@
+//
+//  SecondViewController.m
+//  ApplePayDemo
+//
+//  Created by Lucas Luu on 5/26/16.
+//  Copyright © 2016 Lucas Luu. All rights reserved.
+//
+
+#import "SecondViewController.h"
+#import "TC_CartCell.h"
+@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
+    UITableView*    _tableView;
+    
+    UIImageView*    _image;
+    UILabel*        _productLbl;
+    UILabel*        _priceLbl;
+    UITextField*    _quantity;
+    
+    
+    UIImageView*    _bottomBar;
+    UILabel*        _titleTotalLbl;
+    UILabel*        _totalLbl;
+    UIButton*       _updateBtn; //ffa31a
+    NSMutableArray* _productArr;
+    float           _totalPrice;
+}
+
+@end
+
+@implementation SecondViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"Cart"];
+//    NSMutableDictionary* data1 = [[NSMutableDictionary alloc] init];
+//    [data1 setObject:@"Assassin's Creed Unity" forKey:@"name"];
+//    [data1 setValue:[NSNumber numberWithLong:300] forKey:@"price"];
+//    [data1 setValue:[NSNumber numberWithLong:1] forKey:@"quatity"];
+//    [data1 setObject:@"assassin-s-creed-unity300.jpg" forKey:@"image"];
+//    [_productArr addObject:data1];
+//    NSMutableDictionary* data2 = [[NSMutableDictionary alloc] init];
+//    [data2 setObject:@"Diablo 3 - Reaper of Souls" forKey:@"name"];
+//    [data2 setValue:[NSNumber numberWithLong:300] forKey:@"price"];
+//    [data2 setValue:[NSNumber numberWithLong:1] forKey:@"quatity"];
+//    [data2 setObject:@"diablo-3-reaper-of-souls450.jpg" forKey:@"image"];
+//    [_productArr addObject:data2];
+//    NSMutableDictionary* data3 = [[NSMutableDictionary alloc] init];
+//    [data3 setObject:@"Overwatch" forKey:@"name"];
+//    [data3 setValue:@1250 forKey:@"price"];
+//    [data3 setValue:@1 forKey:@"quatity"];
+//    [data3 setObject:@"overwatch-pre-order1250.jpg" forKey:@"image"];
+//    [_productArr addObject:data3];
+//    NSMutableDictionary* data4 = [[NSMutableDictionary alloc] init];
+//    [data4 setObject:@"Stream Wallet Code $50" forKey:@"name"];
+//    [data4 setValue:@3000 forKey:@"price"];
+//    [data4 setValue:@3 forKey:@"quatity"];
+//    [data4 setObject:@"wallet-code-50.jpg" forKey:@"image"];
+//    [_productArr addObject:data4];
+    
+    [self.view setBackgroundColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:1.0]];
+    _tableView = [[UITableView alloc]init];
+    [_tableView setBackgroundColor:[UIColor clearColor]];
+    [_tableView setAllowsSelection:NO];
+    [_tableView registerClass:[TC_CartCell class] forCellReuseIdentifier:@"cartCells"];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+
+    _tableView.separatorColor = [UIColor clearColor];
+    [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_tableView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-58.0]];
+    _bottomBar = [[UIImageView alloc]init];
+    [_bottomBar setBackgroundColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:1.0]];
+    [_bottomBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_bottomBar];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-60.0]];
+    _updateBtn = [[UIButton alloc]init];
+    [_updateBtn setTitle:@"Update Cart" forState:UIControlStateNormal];
+    [_updateBtn setBackgroundColor:[UIColor greenColor]];
+    _updateBtn.layer.cornerRadius = 4;
+    _updateBtn.layer.masksToBounds =YES;
+    [_updateBtn addTarget:self action:@selector(updateCart) forControlEvents:UIControlEventTouchUpInside];
+    [_updateBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_bottomBar addSubview:_updateBtn];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:10.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_updateBtn
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:120.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_updateBtn
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-30.0]];
+    _totalLbl = [[UILabel alloc]init];
+    [_totalLbl setTextColor:[UIColor orangeColor]];
+    [_totalLbl setText:@"0"];
+    [_totalLbl setFont:[UIFont boldSystemFontOfSize:20]];
+    [_totalLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [_bottomBar addSubview:_totalLbl];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_totalLbl
+                                                           attribute:NSLayoutAttributeCenterY
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:_bottomBar
+                                                           attribute:NSLayoutAttributeCenterY
+                                                          multiplier:1.0
+                                                            constant:0.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_totalLbl
+                                                           attribute:NSLayoutAttributeRight
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:_bottomBar
+                                                           attribute:NSLayoutAttributeRight
+                                                          multiplier:1.0
+                                                            constant:-20.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_totalLbl
+                                                           attribute:NSLayoutAttributeLeft
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:_totalLbl
+                                                           attribute:NSLayoutAttributeRight
+                                                          multiplier:1.0
+                                                            constant:-100.0]];
+    [_bottomBar addConstraint:[NSLayoutConstraint constraintWithItem:_totalLbl
+                                                           attribute:NSLayoutAttributeTop
+                                                           relatedBy:NSLayoutRelationEqual
+                                                              toItem:_totalLbl
+                                                           attribute:NSLayoutAttributeBottom
+                                                          multiplier:1.0
+                                                            constant:-30.0]];
+    for (NSMutableDictionary* element in _productArr) {
+        float price = [[element valueForKey:@"price"] floatValue] * [[element objectForKey:@"count"] integerValue];
+        _totalPrice += price;
+    }
+    [_totalLbl setText:[NSString stringWithFormat:@"%.02f",_totalPrice]];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)updateCart
+{
+    _totalPrice = 0.0;
+    for (NSMutableDictionary* element in _productArr) {
+        float price = [[element valueForKey:@"price"] floatValue] * [[element objectForKey:@"count"] integerValue];
+        _totalPrice += price;
+    }
+    [_totalLbl setText:[NSString stringWithFormat:@"%.02f",_totalPrice]];
+}
+
+#pragma mar - UICode
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _productArr.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 150;
+}
+-(TC_CartCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TC_CartCell*cell = [tableView dequeueReusableCellWithIdentifier:@"cartCells"];
+    if (!cell) {
+        cell = [[TC_CartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cartCells"];
+    }
+    cell.dataSource = [_productArr objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action , NSIndexPath *indexPath)
+                                 {
+                                     [_tableView beginUpdates];
+                                     [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+                                     [_productArr removeObjectAtIndex:indexPath.row];
+                                     [_tableView endUpdates];
+                                     
+                                 }];
+    delete.backgroundColor = [UIColor redColor];
+    return @[delete];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES];
+    
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+      [self.view endEditing:YES];
+    [self updateCart];
+}
+
+-(void)setDataSource:(NSMutableArray *)dataSource
+{
+    _productArr = [NSMutableArray new];
+    _dataSource = dataSource;
+    for (NSDictionary* objectData in dataSource) {
+        [self addNewProduct:objectData];
+    }
+    [_tableView reloadData];
+}
+
+-(void)addNewProduct:(NSDictionary *)productInfo count:(NSInteger)count
+{
+    for (NSMutableDictionary* visibleProduct in _productArr) {
+        if ([[visibleProduct objectForKey:@"name"] isEqualToString:[productInfo objectForKey:@"name"]]) {
+            [visibleProduct setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+            return;
+        }
+    }
+    [self updateCart];
+}
+
+-(void)addNewProduct:(NSDictionary*)productInfo
+{
+    if ([self isVisible:productInfo]) {
+        for (NSMutableDictionary* visibleProduct in _productArr) {
+            if ([[visibleProduct objectForKey:@"name"] isEqualToString:[productInfo objectForKey:@"name"]]) {
+                NSInteger count = [[visibleProduct objectForKey:@"count"] integerValue];
+                count ++;
+                [visibleProduct setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
+                return;
+            }
+        }
+    }
+    else
+    {
+        NSMutableDictionary* product = [NSMutableDictionary dictionaryWithDictionary:productInfo];
+        [product setObject:[NSNumber numberWithInteger:1] forKey:@"count"];
+        [_productArr addObject:product];
+    }
+}
+
+-(BOOL)isVisible:(NSDictionary*)objectData
+{
+    for (NSMutableDictionary* visibleProduct in _productArr) {
+        if ([[visibleProduct objectForKey:@"name"] isEqualToString:[objectData objectForKey:@"name"]]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+#pragma mark - Apple Pay
+@end

@@ -1,0 +1,233 @@
+//
+//  TC_CartCell.m
+//  ApplePayDemo
+//
+//  Created by admin on 5/27/16.
+//  Copyright © 2016 Lucas Luu. All rights reserved.
+//
+
+#import "TC_CartCell.h"
+#import "SecondViewController.h"
+
+@interface TC_CartCell ()<UITextFieldDelegate>
+{
+    
+}
+@end
+@implementation TC_CartCell
+{
+    UIImageView*    _background;
+    UIImageView*    _image;
+    UILabel*        _product;
+    UILabel*        _price;
+    UITextField*    _quantity;
+   
+
+}
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        [self setBackgroundColor:[UIColor darkGrayColor]];
+        _background = [[UIImageView alloc]init];
+        [_background setImage:[UIImage imageNamed:@"blueBG"]];
+        [_background setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:_background];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_background
+                                                         attribute:NSLayoutAttributeLeft
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeLeft
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_background
+                                                         attribute:NSLayoutAttributeRight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_background
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_background
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        _image = [[UIImageView alloc]init];
+        [_image setImage:[UIImage imageNamed:[_dataSource objectForKey:@"image"]]];
+        _image.layer.cornerRadius = 10;
+        _image.layer.masksToBounds = YES;
+        [_image setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:_image];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_image
+                                                              attribute:NSLayoutAttributeCenterY
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self
+                                                              attribute:NSLayoutAttributeCenterY
+                                                             multiplier:1.0
+                                                               constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_image
+                                                              attribute:NSLayoutAttributeLeft
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:self
+                                                              attribute:NSLayoutAttributeLeft
+                                                             multiplier:1.0
+                                                               constant:10.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_image
+                                                              attribute:NSLayoutAttributeRight
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:_image
+                                                              attribute:NSLayoutAttributeLeft
+                                                             multiplier:1.0
+                                                               constant:120.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_image
+                                                              attribute:NSLayoutAttributeTop
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:_image
+                                                              attribute:NSLayoutAttributeBottom
+                                                             multiplier:1.0
+                                                               constant:-120.0]];
+        _product = [[UILabel alloc]init];
+        _product.text = [_dataSource objectForKey:@"name"];
+        _product.numberOfLines = 0;
+        [_product setFont:[UIFont boldSystemFontOfSize:18]];
+        [_product setTextColor:[UIColor whiteColor]];
+        [_product setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:_product];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_product
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:20.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_product
+                                                         attribute:NSLayoutAttributeLeft
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_image
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:15.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_product
+                                                         attribute:NSLayoutAttributeRight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_product
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_product
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:50.0]];
+        _price = [[UILabel alloc]init];
+        NSString* priceString = [NSString stringWithFormat:@"%ld",(long)[[_dataSource valueForKey:@"price"] intValue]];
+        [_price setText:priceString];
+        [_price setFont:[UIFont systemFontOfSize:16]];
+        [_price setTextColor:[UIColor orangeColor]];
+        [_price setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:_price];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_price
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_product
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_price
+                                                         attribute:NSLayoutAttributeLeft
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_image
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:15.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_price
+                                                         attribute:NSLayoutAttributeRight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_price
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_price
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:30.0]];
+        _quantity = [[UITextField alloc]init];
+        [_quantity setDelegate:self];
+        NSString* quatityString = [NSString stringWithFormat:@"%ld",(long)[[_dataSource valueForKey:@"count"] intValue]];
+        [_quantity setText:quatityString];
+        [_quantity setTextColor:[UIColor whiteColor]];
+        [_quantity setBackgroundColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:0.65]];
+        _quantity.borderStyle = UITextBorderStyleRoundedRect;
+        [_quantity setTextAlignment:NSTextAlignmentCenter];
+//        _quantity.layer.cornerRadius = 2;
+//        _quantity.layer.masksToBounds = YES;
+        [_quantity setKeyboardType:UIKeyboardTypeNumberPad];
+        [_quantity setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [self addSubview:_quantity];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_quantity
+                                                         attribute:NSLayoutAttributeTop
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_price
+                                                         attribute:NSLayoutAttributeBottom
+                                                        multiplier:1.0
+                                                          constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_quantity
+                                                         attribute:NSLayoutAttributeLeft
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_image
+                                                         attribute:NSLayoutAttributeRight
+                                                        multiplier:1.0
+                                                          constant:15.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_quantity
+                                                         attribute:NSLayoutAttributeRight
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_quantity
+                                                         attribute:NSLayoutAttributeLeft
+                                                        multiplier:1.0
+                                                          constant:50.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_quantity
+                                                         attribute:NSLayoutAttributeBottom
+                                                         relatedBy:NSLayoutRelationEqual
+                                                            toItem:_quantity
+                                                         attribute:NSLayoutAttributeTop
+                                                        multiplier:1.0
+                                                          constant:30.0]];
+    }
+    return self;
+}
+-(void)setDataSource:(NSMutableDictionary *)dataSource
+{
+    _dataSource = dataSource;
+    NSString* quatityString = [NSString stringWithFormat:@"%ld",(long)[[dataSource valueForKey:@"count"] intValue]];
+    [_quantity setText:quatityString];
+    _product.text = [dataSource objectForKey:@"name"];
+    [_image setImage:[UIImage imageNamed:[dataSource objectForKey:@"image"]]];
+    NSString* priceString = [NSString stringWithFormat:@"%.02f",[[dataSource valueForKey:@"price"] floatValue]];
+    [_price setText:priceString];
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSString* text = textField.text;
+    if ([_delegate respondsToSelector:@selector(addNewProduct:count:)]) {
+        [_delegate addNewProduct:_dataSource count:[text integerValue]];
+    }
+}
+@end
+

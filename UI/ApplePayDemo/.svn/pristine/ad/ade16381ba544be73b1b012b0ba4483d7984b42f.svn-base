@@ -1,0 +1,212 @@
+//
+//  SecondViewController.m
+//  ApplePayDemo
+//
+//  Created by Lucas Luu on 5/26/16.
+//  Copyright © 2016 Lucas Luu. All rights reserved.
+//
+
+#import "SecondViewController.h"
+#import "TC_CartCell.h"
+@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>{
+    UITableView*    _tableView;
+    
+    UIImageView*    _image;
+    UILabel*        _productLbl;
+    UILabel*        _priceLbl;
+    UITextField*    _quantity;
+    
+    
+    UIImageView*   _bottomBar;
+    UILabel*        _titleTotalLbl;
+    UILabel*        _totalLbl;
+    UIButton*       _updateBtn; //ffa31a
+}
+
+@end
+
+@implementation SecondViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setTitle:@"Cart"];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.view setBackgroundColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:1.0]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:1.0]];
+    
+    _tableView = [[UITableView alloc]init];
+    [_tableView setBackgroundColor:[UIColor clearColor]];
+    [_tableView setAllowsSelection:NO];
+    [_tableView registerClass:[TC_CartCell class] forCellReuseIdentifier:@"cartCells"];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+
+    _tableView.separatorColor = [UIColor clearColor];
+    [_tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_tableView];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeTop
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_tableView
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-58.0]];
+    _bottomBar = [[UIImageView alloc]init];
+    [_bottomBar setBackgroundColor:[UIColor LVL_colorWithHexString:@"06121F" andAlpha:1.0]];
+    [_bottomBar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_bottomBar];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeBottom
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeRight
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_bottomBar
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-60.0]];
+    _updateBtn = [[UIButton alloc]init];
+    [_updateBtn setTitle:@"Update Cart" forState:UIControlStateNormal];
+    [_updateBtn setBackgroundColor:[UIColor greenColor]];
+    _updateBtn.layer.cornerRadius = 4;
+    _updateBtn.layer.masksToBounds =YES;
+    [_updateBtn setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self.view addSubview:_updateBtn];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeCenterY
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeCenterY
+                                                         multiplier:1.0
+                                                           constant:0.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeLeft
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_bottomBar
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:10.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeRight
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_updateBtn
+                                                          attribute:NSLayoutAttributeLeft
+                                                         multiplier:1.0
+                                                           constant:100.0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_updateBtn
+                                                          attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:_updateBtn
+                                                          attribute:NSLayoutAttributeBottom
+                                                         multiplier:1.0
+                                                           constant:-30.0]];
+
+    
+    UIBarButtonItem* cartItem = [[UIBarButtonItem alloc] initWithTitle:@"Cart" style:UIBarButtonItemStylePlain target:self action:@selector(cartCheckOut)];
+    self.navigationItem.rightBarButtonItem = cartItem;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)cartCheckOut
+{
+    SecondViewController* secondVC = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:secondVC animated:YES];
+}
+
+
+#pragma mar - UICode
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 150;
+}
+-(TC_CartCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    TC_CartCell*cell = [tableView dequeueReusableCellWithIdentifier:@"cartCells"];
+    if (!cell) {
+        cell = [[TC_CartCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cartCells"];
+    }
+    //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                 {
+                                     
+                                 }];
+    delete.backgroundColor = [UIColor redColor];
+    return @[delete];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.view endEditing:YES];
+    
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+      [self.view endEditing:YES];
+}
+
+
+#pragma mark - Apple Pay
+@end

@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		131812521CF7601A00F6E6E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 131812511CF7601A00F6E6E2 /* main.m */; };
+		131812551CF7601A00F6E6E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 131812541CF7601A00F6E6E2 /* AppDelegate.m */; };
+		131812581CF7601A00F6E6E2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 131812571CF7601A00F6E6E2 /* FirstViewController.m */; };
+		1318125B1CF7601A00F6E6E2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1318125A1CF7601A00F6E6E2 /* SecondViewController.m */; };
+		1318125E1CF7601A00F6E6E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1318125C1CF7601A00F6E6E2 /* Main.storyboard */; };
+		131812601CF7601A00F6E6E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1318125F1CF7601A00F6E6E2 /* Assets.xcassets */; };
+		131812631CF7601A00F6E6E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 131812611CF7601A00F6E6E2 /* LaunchScreen.storyboard */; };
+		132E99A31CF9C22A00E6AAEE /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E99A21CF9C22A00E6AAEE /* Stripe.framework */; };
+		138622BA1CF82B6200BCED2E /* UIColor_EXT.m in Sources */ = {isa = PBXBuildFile; fileRef = 138622B91CF82B6200BCED2E /* UIColor_EXT.m */; };
+		84382CAC1CF81CEE009D845D /* blueBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84382CAB1CF81CEE009D845D /* blueBG@2x.png */; };
+		84382CB01CF823C4009D845D /* TC_CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84382CAF1CF823C4009D845D /* TC_CartCell.m */; };
+		846332C31CF76ED70082927C /* TC_ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846332C21CF76ED70082927C /* TC_ProductCell.m */; };
+		846332DA1CF775270082927C /* assassin-s-creed-unity300.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332C51CF775270082927C /* assassin-s-creed-unity300.jpg */; };
+		846332DB1CF775270082927C /* assassins-creed-iv-black-flag250.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332C61CF775270082927C /* assassins-creed-iv-black-flag250.jpg */; };
+		846332DC1CF775270082927C /* battlefield-4-premium-edition910.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332C71CF775270082927C /* battlefield-4-premium-edition910.jpg */; };
+		846332DD1CF775270082927C /* battlenet-wallet-code-20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332C81CF775270082927C /* battlenet-wallet-code-20.jpg */; };
+		846332DE1CF775270082927C /* call-of-duty-black-ops-iii-750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332C91CF775270082927C /* call-of-duty-black-ops-iii-750.jpg */; };
+		846332DF1CF775270082927C /* counter-strike-global-offensive160.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CA1CF775270082927C /* counter-strike-global-offensive160.jpg */; };
+		846332E01CF775270082927C /* dark-souls-iii-pre-order850.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CB1CF775270082927C /* dark-souls-iii-pre-order850.jpg */; };
+		846332E11CF775270082927C /* dark-souls-prepare-to-die-edition350.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CC1CF775270082927C /* dark-souls-prepare-to-die-edition350.jpg */; };
+		846332E21CF775270082927C /* dead-island-2-steam800.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CD1CF775270082927C /* dead-island-2-steam800.jpg */; };
+		846332E31CF775270082927C /* diablo-3-reaper-of-souls450.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CE1CF775270082927C /* diablo-3-reaper-of-souls450.jpg */; };
+		846332E41CF775270082927C /* grand-theft-auto-v-gta-v-steam750.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332CF1CF775270082927C /* grand-theft-auto-v-gta-v-steam750.jpg */; };
+		846332E51CF775270082927C /* hitman-full-experience -950.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D01CF775270082927C /* hitman-full-experience -950.jpg */; };
+		846332E61CF775270082927C /* mafia-iii-digital-deluxe-pre-order-steam1250.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D11CF775270082927C /* mafia-iii-digital-deluxe-pre-order-steam1250.jpg */; };
+		846332E71CF775270082927C /* metal-gear-solid-the-phantom-pain850.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D21CF775270082927C /* metal-gear-solid-the-phantom-pain850.jpg */; };
+		846332E81CF775270082927C /* overwatch-pre-order1250.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D31CF775270082927C /* overwatch-pre-order1250.jpg */; };
+		846332E91CF775270082927C /* psn-card-us-50.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D41CF775270082927C /* psn-card-us-50.jpg */; };
+		846332EA1CF775270082927C /* rise-of-the-tomb-raider860.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D51CF775270082927C /* rise-of-the-tomb-raider860.jpg */; };
+		846332EB1CF775270082927C /* starcraft-2-legacy-of-the-void680.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D61CF775270082927C /* starcraft-2-legacy-of-the-void680.jpg */; };
+		846332EC1CF775270082927C /* tom-clancy-s-rainbow-six-siege990.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D71CF775270082927C /* tom-clancy-s-rainbow-six-siege990.jpg */; };
+		846332ED1CF775270082927C /* tom-clancy-s-the-division-season-pass-steam780.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D81CF775270082927C /* tom-clancy-s-the-division-season-pass-steam780.jpg */; };
+		846332EE1CF775270082927C /* wallet-code-50.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 846332D91CF775270082927C /* wallet-code-50.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1318124D1CF7601A00F6E6E2 /* ApplePayDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApplePayDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		131812511CF7601A00F6E6E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		131812531CF7601A00F6E6E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		131812541CF7601A00F6E6E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		131812561CF7601A00F6E6E2 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		131812571CF7601A00F6E6E2 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		131812591CF7601A00F6E6E2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		1318125A1CF7601A00F6E6E2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1318125D1CF7601A00F6E6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1318125F1CF7601A00F6E6E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		131812621CF7601A00F6E6E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		131812641CF7601A00F6E6E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		132E99A21CF9C22A00E6AAEE /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = ApplePayDemo/Libraries/StripeiOS/Stripe.framework; sourceTree = "<group>"; };
+		132E99A41CF9C45F00E6AAEE /* ApplePayDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ApplePayDemo.entitlements; sourceTree = "<group>"; };
+		138622B71CF82AD600BCED2E /* ApplePayDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ApplePayDemo-Prefix.pch"; path = "ApplePayDemo/ApplePayDemo-Prefix.pch"; sourceTree = "<group>"; };
+		138622B81CF82B6200BCED2E /* UIColor_EXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIColor_EXT.h; path = Extension/UIColor_EXT/UIColor_EXT.h; sourceTree = "<group>"; };
+		138622B91CF82B6200BCED2E /* UIColor_EXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColor_EXT.m; path = Extension/UIColor_EXT/UIColor_EXT.m; sourceTree = "<group>"; };
+		84382CAB1CF81CEE009D845D /* blueBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueBG@2x.png"; sourceTree = "<group>"; };
+		84382CAE1CF823C4009D845D /* TC_CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TC_CartCell.h; sourceTree = "<group>"; };
+		84382CAF1CF823C4009D845D /* TC_CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TC_CartCell.m; sourceTree = "<group>"; };
+		846332C11CF76ED70082927C /* TC_ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TC_ProductCell.h; sourceTree = "<group>"; };
+		846332C21CF76ED70082927C /* TC_ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TC_ProductCell.m; sourceTree = "<group>"; };
+		846332C51CF775270082927C /* assassin-s-creed-unity300.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "assassin-s-creed-unity300.jpg"; sourceTree = "<group>"; };
+		846332C61CF775270082927C /* assassins-creed-iv-black-flag250.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "assassins-creed-iv-black-flag250.jpg"; sourceTree = "<group>"; };
+		846332C71CF775270082927C /* battlefield-4-premium-edition910.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "battlefield-4-premium-edition910.jpg"; sourceTree = "<group>"; };
+		846332C81CF775270082927C /* battlenet-wallet-code-20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "battlenet-wallet-code-20.jpg"; sourceTree = "<group>"; };
+		846332C91CF775270082927C /* call-of-duty-black-ops-iii-750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "call-of-duty-black-ops-iii-750.jpg"; sourceTree = "<group>"; };
+		846332CA1CF775270082927C /* counter-strike-global-offensive160.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "counter-strike-global-offensive160.jpg"; sourceTree = "<group>"; };
+		846332CB1CF775270082927C /* dark-souls-iii-pre-order850.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dark-souls-iii-pre-order850.jpg"; sourceTree = "<group>"; };
+		846332CC1CF775270082927C /* dark-souls-prepare-to-die-edition350.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dark-souls-prepare-to-die-edition350.jpg"; sourceTree = "<group>"; };
+		846332CD1CF775270082927C /* dead-island-2-steam800.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "dead-island-2-steam800.jpg"; sourceTree = "<group>"; };
+		846332CE1CF775270082927C /* diablo-3-reaper-of-souls450.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "diablo-3-reaper-of-souls450.jpg"; sourceTree = "<group>"; };
+		846332CF1CF775270082927C /* grand-theft-auto-v-gta-v-steam750.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "grand-theft-auto-v-gta-v-steam750.jpg"; sourceTree = "<group>"; };
+		846332D01CF775270082927C /* hitman-full-experience -950.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hitman-full-experience -950.jpg"; sourceTree = "<group>"; };
+		846332D11CF775270082927C /* mafia-iii-digital-deluxe-pre-order-steam1250.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mafia-iii-digital-deluxe-pre-order-steam1250.jpg"; sourceTree = "<group>"; };
+		846332D21CF775270082927C /* metal-gear-solid-the-phantom-pain850.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "metal-gear-solid-the-phantom-pain850.jpg"; sourceTree = "<group>"; };
+		846332D31CF775270082927C /* overwatch-pre-order1250.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "overwatch-pre-order1250.jpg"; sourceTree = "<group>"; };
+		846332D41CF775270082927C /* psn-card-us-50.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "psn-card-us-50.jpg"; sourceTree = "<group>"; };
+		846332D51CF775270082927C /* rise-of-the-tomb-raider860.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "rise-of-the-tomb-raider860.jpg"; sourceTree = "<group>"; };
+		846332D61CF775270082927C /* starcraft-2-legacy-of-the-void680.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "starcraft-2-legacy-of-the-void680.jpg"; sourceTree = "<group>"; };
+		846332D71CF775270082927C /* tom-clancy-s-rainbow-six-siege990.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tom-clancy-s-rainbow-six-siege990.jpg"; sourceTree = "<group>"; };
+		846332D81CF775270082927C /* tom-clancy-s-the-division-season-pass-steam780.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tom-clancy-s-the-division-season-pass-steam780.jpg"; sourceTree = "<group>"; };
+		846332D91CF775270082927C /* wallet-code-50.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "wallet-code-50.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1318124A1CF7601A00F6E6E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				132E99A31CF9C22A00E6AAEE /* Stripe.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		131812441CF7601A00F6E6E2 = {
+			isa = PBXGroup;
+			children = (
+				132E99A21CF9C22A00E6AAEE /* Stripe.framework */,
+				138622B71CF82AD600BCED2E /* ApplePayDemo-Prefix.pch */,
+				1318124F1CF7601A00F6E6E2 /* ApplePayDemo */,
+				1318124E1CF7601A00F6E6E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1318124E1CF7601A00F6E6E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1318124D1CF7601A00F6E6E2 /* ApplePayDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1318124F1CF7601A00F6E6E2 /* ApplePayDemo */ = {
+			isa = PBXGroup;
+			children = (
+				132E99A41CF9C45F00E6AAEE /* ApplePayDemo.entitlements */,
+				138622B81CF82B6200BCED2E /* UIColor_EXT.h */,
+				138622B91CF82B6200BCED2E /* UIColor_EXT.m */,
+				131812531CF7601A00F6E6E2 /* AppDelegate.h */,
+				131812541CF7601A00F6E6E2 /* AppDelegate.m */,
+				846332C11CF76ED70082927C /* TC_ProductCell.h */,
+				846332C21CF76ED70082927C /* TC_ProductCell.m */,
+				131812561CF7601A00F6E6E2 /* FirstViewController.h */,
+				131812571CF7601A00F6E6E2 /* FirstViewController.m */,
+				84382CAD1CF82396009D845D /* TC_CartCell */,
+				131812591CF7601A00F6E6E2 /* SecondViewController.h */,
+				1318125A1CF7601A00F6E6E2 /* SecondViewController.m */,
+				1318125C1CF7601A00F6E6E2 /* Main.storyboard */,
+				1318125F1CF7601A00F6E6E2 /* Assets.xcassets */,
+				131812611CF7601A00F6E6E2 /* LaunchScreen.storyboard */,
+				131812641CF7601A00F6E6E2 /* Info.plist */,
+				131812501CF7601A00F6E6E2 /* Supporting Files */,
+			);
+			path = ApplePayDemo;
+			sourceTree = "<group>";
+		};
+		131812501CF7601A00F6E6E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846332C41CF774EA0082927C /* image */,
+				131812511CF7601A00F6E6E2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84382CAD1CF82396009D845D /* TC_CartCell */ = {
+			isa = PBXGroup;
+			children = (
+				84382CAE1CF823C4009D845D /* TC_CartCell.h */,
+				84382CAF1CF823C4009D845D /* TC_CartCell.m */,
+			);
+			name = TC_CartCell;
+			sourceTree = "<group>";
+		};
+		846332C41CF774EA0082927C /* image */ = {
+			isa = PBXGroup;
+			children = (
+				84382CAB1CF81CEE009D845D /* blueBG@2x.png */,
+				846332C51CF775270082927C /* assassin-s-creed-unity300.jpg */,
+				846332C61CF775270082927C /* assassins-creed-iv-black-flag250.jpg */,
+				846332C71CF775270082927C /* battlefield-4-premium-edition910.jpg */,
+				846332C81CF775270082927C /* battlenet-wallet-code-20.jpg */,
+				846332C91CF775270082927C /* call-of-duty-black-ops-iii-750.jpg */,
+				846332CA1CF775270082927C /* counter-strike-global-offensive160.jpg */,
+				846332CB1CF775270082927C /* dark-souls-iii-pre-order850.jpg */,
+				846332CC1CF775270082927C /* dark-souls-prepare-to-die-edition350.jpg */,
+				846332CD1CF775270082927C /* dead-island-2-steam800.jpg */,
+				846332CE1CF775270082927C /* diablo-3-reaper-of-souls450.jpg */,
+				846332CF1CF775270082927C /* grand-theft-auto-v-gta-v-steam750.jpg */,
+				846332D01CF775270082927C /* hitman-full-experience -950.jpg */,
+				846332D11CF775270082927C /* mafia-iii-digital-deluxe-pre-order-steam1250.jpg */,
+				846332D21CF775270082927C /* metal-gear-solid-the-phantom-pain850.jpg */,
+				846332D31CF775270082927C /* overwatch-pre-order1250.jpg */,
+				846332D41CF775270082927C /* psn-card-us-50.jpg */,
+				846332D51CF775270082927C /* rise-of-the-tomb-raider860.jpg */,
+				846332D61CF775270082927C /* starcraft-2-legacy-of-the-void680.jpg */,
+				846332D71CF775270082927C /* tom-clancy-s-rainbow-six-siege990.jpg */,
+				846332D81CF775270082927C /* tom-clancy-s-the-division-season-pass-steam780.jpg */,
+				846332D91CF775270082927C /* wallet-code-50.jpg */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1318124C1CF7601A00F6E6E2 /* ApplePayDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 131812671CF7601A00F6E6E2 /* Build configuration list for PBXNativeTarget "ApplePayDemo" */;
+			buildPhases = (
+				131812491CF7601A00F6E6E2 /* Sources */,
+				1318124A1CF7601A00F6E6E2 /* Frameworks */,
+				1318124B1CF7601A00F6E6E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApplePayDemo;
+			productName = ApplePayDemo;
+			productReference = 1318124D1CF7601A00F6E6E2 /* ApplePayDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		131812451CF7601A00F6E6E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Lucas Luu";
+				TargetAttributes = {
+					1318124C1CF7601A00F6E6E2 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5592AK55J4;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 131812481CF7601A00F6E6E2 /* Build configuration list for PBXProject "ApplePayDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 131812441CF7601A00F6E6E2;
+			productRefGroup = 1318124E1CF7601A00F6E6E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1318124C1CF7601A00F6E6E2 /* ApplePayDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1318124B1CF7601A00F6E6E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846332E61CF775270082927C /* mafia-iii-digital-deluxe-pre-order-steam1250.jpg in Resources */,
+				846332E41CF775270082927C /* grand-theft-auto-v-gta-v-steam750.jpg in Resources */,
+				131812631CF7601A00F6E6E2 /* LaunchScreen.storyboard in Resources */,
+				846332EC1CF775270082927C /* tom-clancy-s-rainbow-six-siege990.jpg in Resources */,
+				846332DD1CF775270082927C /* battlenet-wallet-code-20.jpg in Resources */,
+				846332EB1CF775270082927C /* starcraft-2-legacy-of-the-void680.jpg in Resources */,
+				846332E91CF775270082927C /* psn-card-us-50.jpg in Resources */,
+				846332DF1CF775270082927C /* counter-strike-global-offensive160.jpg in Resources */,
+				846332E01CF775270082927C /* dark-souls-iii-pre-order850.jpg in Resources */,
+				846332E71CF775270082927C /* metal-gear-solid-the-phantom-pain850.jpg in Resources */,
+				846332DC1CF775270082927C /* battlefield-4-premium-edition910.jpg in Resources */,
+				846332EA1CF775270082927C /* rise-of-the-tomb-raider860.jpg in Resources */,
+				846332DB1CF775270082927C /* assassins-creed-iv-black-flag250.jpg in Resources */,
+				846332DE1CF775270082927C /* call-of-duty-black-ops-iii-750.jpg in Resources */,
+				846332ED1CF775270082927C /* tom-clancy-s-the-division-season-pass-steam780.jpg in Resources */,
+				846332E31CF775270082927C /* diablo-3-reaper-of-souls450.jpg in Resources */,
+				131812601CF7601A00F6E6E2 /* Assets.xcassets in Resources */,
+				846332E11CF775270082927C /* dark-souls-prepare-to-die-edition350.jpg in Resources */,
+				846332E51CF775270082927C /* hitman-full-experience -950.jpg in Resources */,
+				846332E81CF775270082927C /* overwatch-pre-order1250.jpg in Resources */,
+				846332EE1CF775270082927C /* wallet-code-50.jpg in Resources */,
+				84382CAC1CF81CEE009D845D /* blueBG@2x.png in Resources */,
+				846332E21CF775270082927C /* dead-island-2-steam800.jpg in Resources */,
+				846332DA1CF775270082927C /* assassin-s-creed-unity300.jpg in Resources */,
+				1318125E1CF7601A00F6E6E2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		131812491CF7601A00F6E6E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846332C31CF76ED70082927C /* TC_ProductCell.m in Sources */,
+				1318125B1CF7601A00F6E6E2 /* SecondViewController.m in Sources */,
+				131812551CF7601A00F6E6E2 /* AppDelegate.m in Sources */,
+				84382CB01CF823C4009D845D /* TC_CartCell.m in Sources */,
+				138622BA1CF82B6200BCED2E /* UIColor_EXT.m in Sources */,
+				131812581CF7601A00F6E6E2 /* FirstViewController.m in Sources */,
+				131812521CF7601A00F6E6E2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1318125C1CF7601A00F6E6E2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1318125D1CF7601A00F6E6E2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		131812611CF7601A00F6E6E2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				131812621CF7601A00F6E6E2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		131812651CF7601A00F6E6E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		131812661CF7601A00F6E6E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		131812681CF7601A00F6E6E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayDemo/ApplePayDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Libraries/StripeiOS",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ApplePayDemo/ApplePayDemo-Prefix.pch";
+				INFOPLIST_FILE = ApplePayDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = merchant.com.iOStektalk22;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		131812691CF7601A00F6E6E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ApplePayDemo/ApplePayDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ApplePayDemo/Libraries/StripeiOS",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ApplePayDemo/ApplePayDemo-Prefix.pch";
+				INFOPLIST_FILE = ApplePayDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = merchant.com.iOStektalk22;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		131812481CF7601A00F6E6E2 /* Build configuration list for PBXProject "ApplePayDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				131812651CF7601A00F6E6E2 /* Debug */,
+				131812661CF7601A00F6E6E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		131812671CF7601A00F6E6E2 /* Build configuration list for PBXNativeTarget "ApplePayDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				131812681CF7601A00F6E6E2 /* Debug */,
+				131812691CF7601A00F6E6E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 131812451CF7601A00F6E6E2 /* Project object */;
+}

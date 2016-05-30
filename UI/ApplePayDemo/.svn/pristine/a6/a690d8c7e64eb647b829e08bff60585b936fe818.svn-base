@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "e1c7d674-c513-074e-afcc-6179592536c9++9319",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "e1c7d674-c513-074e-afcc-6179592536c9++9319" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "e1c7d674-c513-074e-afcc-6179592536c9++9319" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9F885315-B2D2-4DFE-B8AE-849B8B047D3B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "e1c7d674-c513-074e-afcc-6179592536c9++9319" : "Source\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ApplePayDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ApplePayDemo\/ApplePayDemo\/ApplePayDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/staging.chidoanh.com:81\/svn\/app_ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e1c7d674-c513-074e-afcc-6179592536c9++9319"
+    }
+  ]
+}
